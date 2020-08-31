@@ -58,5 +58,9 @@
       "pre-commit": "lint-staged && npm run test",
       "pre-push": "npm run build"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LastKing/etcd3-mock"
   }
 }
