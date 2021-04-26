@@ -7,5 +7,6 @@
       "automerge": true
     }
   ],
-  "schedule": ["before 3am on Monday"]
+  "schedule": ["before 3am on Monday"],
+  "ignoreDeps": ["husky"]
 }
