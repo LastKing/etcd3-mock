@@ -41,7 +41,7 @@
     "jest": "27.3.1",
     "lint-staged": "11.2.6",
     "prettier": "2.4.1",
-    "release-it": "14.10.1",
+    "release-it": "14.11.7",
     "rimraf": "3.0.2",
     "ts-jest": "27.0.7",
     "ts-node": "10.1.0",
