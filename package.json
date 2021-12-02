@@ -11,6 +11,7 @@
   "author": "toonew",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "prebuild": "rimraf -rf dist",
     "build": "tsc -p tsconfig.json",
     "lint": "eslint 'src/**/*.ts' --fix",
@@ -28,37 +29,30 @@
     "etcd3": "1.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "13.2.1",
-    "@commitlint/config-angular": "13.2.0",
-    "@types/jest": "26.0.24",
-    "@types/node": "14.17.33",
-    "@typescript-eslint/eslint-plugin": "4.28.5",
-    "@typescript-eslint/parser": "4.28.5",
-    "eslint": "7.32.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-angular": "15.0.0",
+    "@types/jest": "27.0.3",
+    "@types/node": "16.11.11",
+    "@typescript-eslint/eslint-plugin": "5.5.0",
+    "@typescript-eslint/parser": "5.5.0",
+    "eslint": "8.3.0",
     "eslint-config-prettier": "8.3.0",
     "etcd3": "1.1.0",
-    "husky": "4.3.8",
-    "jest": "27.3.1",
-    "lint-staged": "11.2.6",
-    "prettier": "2.4.1",
-    "release-it": "14.11.7",
+    "husky": "7.0.4",
+    "jest": "27.4.3",
+    "lint-staged": "12.1.2",
+    "prettier": "2.5.0",
+    "release-it": "14.11.8",
     "rimraf": "3.0.2",
     "ts-jest": "27.0.7",
     "ts-node": "10.4.0",
-    "typescript": "4.4.4"
+    "typescript": "4.5.2"
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged && npm run test",
-      "pre-push": "npm run build"
-    }
   },
   "repository": {
     "type": "git",
