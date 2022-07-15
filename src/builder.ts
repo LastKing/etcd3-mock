@@ -20,7 +20,7 @@ const emptyBuffer = Buffer.from([]);
 function assertWithin<T>(map: T, value: keyof T, thing: string) {
   if (!(value in map)) {
     const keys = Object.keys(map).join('" "');
-    throw new Error(`Unexpected "${value}" in ${thing}. Possible values are: "${keys}"`);
+    throw new Error(`Unexpected "${value.toString()}" in ${thing}. Possible values are: "${keys}"`);
   }
 }
 
