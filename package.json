@@ -29,8 +29,8 @@
     "etcd3": "1.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-angular": "17.0.3",
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-angular": "17.1.0",
     "@types/jest": "28.1.8",
     "@types/node": "16.11.56",
     "@typescript-eslint/eslint-plugin": "5.30.6",
