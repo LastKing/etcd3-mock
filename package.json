@@ -14,7 +14,7 @@
     "prepare": "husky install",
     "prebuild": "rimraf -rf dist",
     "build": "tsc -p tsconfig.json",
-    "lint": "eslint 'src/**/*.ts' --fix",
+    "lint": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "prepublish:npm": "npm run build",
     "publish:npm": "npm publish --access public",
