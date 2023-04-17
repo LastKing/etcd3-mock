@@ -1,0 +1,11 @@
+{
+  extends: ['config:base'],
+  semanticCommits: 'auto',
+  packageRules: [
+    {
+      matchDepTypes: ['dependencies', 'devDependencies'],
+      automerge: true,
+    },
+  ],
+  schedule: ['before 3am on Monday'],
+}
