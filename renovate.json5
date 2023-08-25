@@ -7,5 +7,5 @@
       automerge: true,
     },
   ],
-  schedule: ['before 3am on Monday'],
+  schedule: ['before 10am on the first day of the month'],
 }
