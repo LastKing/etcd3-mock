@@ -1,4 +1,5 @@
 import { NSApplicator, toBuffer } from 'etcd3/lib/util';
+
 import * as Builder from './builder';
 import { Store } from './store';
 import { WatchBuilder } from './watch';
@@ -9,7 +10,10 @@ import { WatchBuilder } from './watch';
 export class Namespace {
   private readonly nsApplicator = new NSApplicator(this.prefix || toBuffer(''));
 
-  constructor(protected readonly prefix?: Buffer, private readonly store?: Store) {
+  constructor(
+    protected readonly prefix?: Buffer,
+    private readonly store?: Store,
+  ) {
     this.store = store || new Store();
   }
 

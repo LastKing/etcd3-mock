@@ -1,14 +1,17 @@
 /**
  * Created by Rain on 2020/8/28
  */
-import { EtcdError } from 'etcd3';
 import { EventEmitter } from 'events';
 
+import { EtcdError } from 'etcd3';
+
 export class WatchBuilder {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   key(key: string | Buffer): this {
     return this;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   prefix(value: string | Buffer): this {
     return this;
   }

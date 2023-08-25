@@ -2,10 +2,14 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
   extends: [
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
@@ -15,12 +19,16 @@ module.exports = {
     node: true,
     jest: true,
   },
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
+    // eslint-plugin-import
+    'import/order': ['error', { 'newlines-between': 'always', alphabetize: { order: 'asc' } }],
+
+    // typescript-eslint
     '@typescript-eslint/explicit-function-return-type': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': ['error'],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-implicit-any-catch': 'warn',
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/prefer-includes': 'error',
@@ -65,7 +73,7 @@ module.exports = {
     '@typescript-eslint/no-magic-numbers': ['off', { ignoreEnums: true, ignoreArrayIndexes: true }],
     'no-useless-concat': ['error'],
     //Stylistic Issues: These rules relate to style guidelines, and are therefore quite subjective:
-    'max-len': ['error', { code: 100 }],
+    'max-len': ['error', { code: 100, ignoreComments: true }],
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     //Variables: These rules relate to variable declarations:
     'no-delete-var': 'error',

@@ -27,7 +27,10 @@ function assertWithin<T extends object>(map: T, value: keyof T, thing: string): 
 export class MultiRangeBuilder extends PromiseWrap<any> {
   protected request: IRangeRequest = {};
 
-  constructor(private readonly store: Store, private readonly namespace: NSApplicator) {
+  constructor(
+    private readonly store: Store,
+    private readonly namespace: NSApplicator,
+  ) {
     super();
     this.prefix(emptyBuffer);
   }
@@ -217,7 +220,10 @@ export class SingleRangeBuilder {
 export class PutBuilder extends PromiseWrap<any> {
   private readonly request: IPutRequest = {};
 
-  constructor(private readonly store: Store, key: string | Buffer) {
+  constructor(
+    private readonly store: Store,
+    key: string | Buffer,
+  ) {
     super();
     this.request.key = toBuffer(key);
     return this;
