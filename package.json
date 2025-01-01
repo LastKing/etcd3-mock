@@ -28,7 +28,7 @@
     "etcd3": "1.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.6.0",
+    "@commitlint/cli": "19.6.1",
     "@commitlint/config-angular": "19.6.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.10.1",
