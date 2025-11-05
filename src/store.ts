@@ -46,7 +46,7 @@ export class Store {
 
   async range(
     request: IRangeRequest,
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types,@typescript-eslint/no-unused-vars
+
     grpcOption: any,
   ): Promise<IRangeResponse> {
     const matchKeys: string[] = [];

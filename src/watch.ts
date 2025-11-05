@@ -6,12 +6,10 @@ import { EventEmitter } from 'events';
 import { EtcdError } from 'etcd3';
 
 export class WatchBuilder {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   key(key: string | Buffer): this {
     return this;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   prefix(value: string | Buffer): this {
     return this;
   }
@@ -24,10 +22,10 @@ export class WatchBuilder {
 export class Watch extends EventEmitter {
   public on(event: 'connecting', handler: (req: any) => void): this;
   public on(event: 'connected', handler: (res: any) => void): this;
-  // eslint-disable-next-line @typescript-eslint/unified-signatures
+
   public on(event: 'data', handler: (res: any) => void): this;
   public on(event: 'put', handler: (kv: any, previous?: any) => void): this;
-  // eslint-disable-next-line @typescript-eslint/unified-signatures
+
   public on(event: 'delete', handler: (kv: any, previous?: any) => void): this;
   public on(event: 'end', handler: () => void): this;
   public on(event: 'disconnected', handler: (res: EtcdError) => void): this;
