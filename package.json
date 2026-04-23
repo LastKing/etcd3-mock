@@ -62,5 +62,5 @@
     "type": "git",
     "url": "https://github.com/LastKing/etcd3-mock"
   },
-  "packageManager": "pnpm@10.20.0"
+  "packageManager": "pnpm@10.33.2"
 }
