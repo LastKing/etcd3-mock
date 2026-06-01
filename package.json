@@ -38,7 +38,7 @@
     "eslint": "9.39.4",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-prettier": "5.5.6",
     "etcd3": "1.1.2",
     "globals": "^16.5.0",
     "husky": "9.1.7",
