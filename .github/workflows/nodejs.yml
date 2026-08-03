@@ -18,16 +18,33 @@ jobs:
         node-version: [20.x, 22.x, 24.x]
 
     steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
+      # 检出当前仓库代码到 GitHub Actions Runner
+      # 后续 pnpm install、lint、build、test 都需要依赖这里的项目代码
+      - uses: actions/checkout@v6
+
+      # 安装并配置 pnpm 命令
+      # pnpm 版本可以通过 package.json 的 packageManager 字段指定
+      - uses: pnpm/action-setup@v6
         with:
           # version: 10
+          # 不在该 Action 内自动执行 pnpm install
+          # 依赖安装会在后面的步骤中手动执行
           run_install: false
-      - uses: actions/setup-node@v6
+
+      # 安装并切换到 matrix 中指定的 Node.js 版本
+      # 例如 matrix.node-version 配置了 22、24，则整个任务会分别运行两次
+      - uses: actions/setup-node@v7
         name: Use Node.js ${{ matrix.node-version }}
         with:
           node-version: ${{ matrix.node-version }}
-      - run: pnpm install
+          # 缓存 pnpm store，减少后续 CI 重复下载依赖的时间
+          cache: pnpm
+          # 根据锁文件计算缓存 key
+          cache-dependency-path: pnpm-lock.yaml
+
+      # 按照 pnpm-lock.yaml 精确安装依赖
+      # 如果锁文件与 package.json 不一致，则直接失败，避免 CI 自动修改锁文件
+      - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
       - run: pnpm run build
       - run: pnpm run test
