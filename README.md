@@ -18,10 +18,7 @@ async function main() {
 
 the mock just implement simple api. if u need more api support please input issues or pr.
 
-哈哈！~！~
-
-if use the library in typescript code. need `Etcd3Mock as Etcd3`
-
+If you use the library in TypeScript code. need `Etcd3Mock as Etcd3`
 
 ## License
 
