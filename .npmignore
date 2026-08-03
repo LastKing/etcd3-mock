@@ -1,26 +1,20 @@
-# IntelliJ project files
+.github
+.husky
 .idea
-*.iml
 
-node_modules
-
-# source
 src
+node_modules
 test
+
 .commitlintrc.json
-eslint.config.mjs
 .gitignore
 .prettierrc
 .release-it.json
-index.ts
+
+eslint.config.mjs
 package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+renovate.json5
 tsconfig.build.json
 tsconfig.json
-
-# github
-.github
-CONTRIBUTING.md
-renovate.json
-
-# ci
-.circleci
