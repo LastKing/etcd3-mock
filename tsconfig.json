@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "lib": ["ESNext"],
+    "target": "es2020",
+    "types": ["node","jest"],
+
+    "outDir": "./dist",
+    "rootDir": "./",
+    "sourceMap": false,
     "declaration": true,
     "removeComments": true,
+
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": false,
-    "outDir": "./dist",
-    "baseUrl": "./src",
+
+    "noImplicitReturns": true,
     "skipLibCheck": true,
-    "lib": ["esnext"],
-    "noImplicitReturns": true
+    "strict": false
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
